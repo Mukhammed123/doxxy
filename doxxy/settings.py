@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'en.superproject.localhost',
     'de.superproject.localhost',
-    'fr.superproject.localhost'
+    'fr.superproject.localhost',
 ]
 
 
@@ -41,11 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'pages.apps.PagesConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'doxxy.middleware.locales.current_language_middleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -58,7 +61,7 @@ ROOT_URLCONF = 'doxxy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ instance.slug }}</h2>
+<hr>
+
+{% if language == 'fr' %}
+<h2>{{instance.fr_title}}</h2>
+<p>{{instance.fr_body}}</p>
+
+{% elif language == 'de' %}
+<h2>{{instance.de_title}}</h2>
+<p>{{instance.de_body}}</p>
+
+{% else %}
+<h2>{{instance.en_title}}</h2>
+<p>{{instance.en_body}}</p>
+{% endif %}
+
+
+
+{% endblock content %}
