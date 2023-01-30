@@ -6,20 +6,24 @@
 <hr>
 
 {% if language == 'fr' %}
-<h2>{{instance.fr_title}}</h2>
-<p>{{instance.fr_body}}</p>
+<h2>{{ instance.fr_title }}</h2>
+<p>{{ instance.fr_body }}</p>
+<hr>
+<h3>Commentaires</h3>
 
 {% elif language == 'de' %}
-<h2>{{instance.de_title}}</h2>
-<p>{{instance.de_body}}</p>
+<h2>{{ instance.de_title }}</h2>
+<p>{{ instance.de_body }}</p>
+<hr>
+<h3>Bemerkungen</h3>
 
 {% else %}
-<h2>{{instance.en_title}}</h2>
-<p>{{instance.en_body}}</p>
-{% endif %}
-
+<h2>{{ instance.en_title }}</h2>
+<p>{{ instance.en_body }}</p>
 <hr>
 <h3>Comments</h3>
+{% endif %}
+
 <ul>
   {% for comment in comments %}
   <li> {{ comment.body }} </li>
