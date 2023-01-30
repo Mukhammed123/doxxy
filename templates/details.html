@@ -18,6 +18,9 @@
 <p>{{instance.en_body}}</p>
 {% endif %}
 
-
-
+<ul>
+    {% for comment in comments %}
+    <li> {{ comment.body }} </li>
+    {% endfor %}
+</ul>
 {% endblock content %}

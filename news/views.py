@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.utils.translation import get_language
 from django.db.models import F
 from .models import News
+from comments.models import Comment
 
 def news_view(request):
     language = get_language()
@@ -20,4 +21,12 @@ def news_detail_view(request, pk):
 
     instance = get_object_or_404(News, id=pk)
 
-    return render(request, 'details.html', {'instance': instance})
+    comments = Comment.objects.filter(news=instance, language=language)
+
+    context = {
+        'instance': instance,
+        'comments': comments,
+        'language': language,
+        }
+
+    return render(request, 'details.html', context)
