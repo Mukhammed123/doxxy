@@ -2,10 +2,17 @@
 
 {% block content %}
 
-{% for item in data %}
-<a href="{% url 'news-detail' pk=item.id %}">
-    <h2> {{item.title}} </h2>
-    <p> {{item.body}} </p>
-</a>
-{% endfor %}
+<div class="news-list-block">
+
+  {% for item in data %}
+  <div class="news-item-container">
+    <a href="{% url 'news-detail' slug=item.slug %}">
+      <h1> {{ item.slug }} </h1>
+      <h2> {{ item.title }} </h2>
+      <p> {{ item.body }} </p>
+    </a>
+  </div>
+  {% endfor %}
+
+</div>
 {% endblock content %}

@@ -16,10 +16,10 @@ def news_view(request):
 
     return render(request, 'news.html', {'data': news})
 
-def news_detail_view(request, pk):
+def news_detail_view(request, slug):
     language = get_language()
 
-    instance = get_object_or_404(News, id=pk)
+    instance = get_object_or_404(News, slug=slug)
 
     comments = Comment.objects.filter(news=instance, language=language)
 

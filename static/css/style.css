@@ -1,0 +1,13 @@
+a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+main {
+    margin: 2em 4em;
+}
+
+.news-item-container:hover {
+    background-color: rgb(240, 238, 238);
+}

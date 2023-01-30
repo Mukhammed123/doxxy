@@ -1,14 +1,18 @@
+{% load static %}
 <!doctype html>
 <html>
 
 <head>
   <title>Doxxy Project</title>
   <meta name="description" content="Doxxy Project">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
-  {% block content %}
-  {% endblock content %}
+  <main>
+    {% block content %}
+    {% endblock content %}
+  </main>
 </body>
 
 </html>
